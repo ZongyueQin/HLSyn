@@ -1,0 +1,521 @@
+model                      : our
+v2_db                      : True
+use_redis                  : False
+task                       : regression
+subtask                    : train
+sequence_modeling          : True
+data_repr                  : penhance
+code_encoder               : graphcodebert
+chunk_emb                  : cls
+finetune_bert              : True
+replace_with_random_weights : False
+add_edges_fc_graph         : True
+chunk_offset               : 16
+max_code_tokens_len        : 64
+token_att_masking          : True
+preserve_keywords          : True
+pk_version                 : 2
+apply_act_conv_first       : False
+vis_transformer_att        : False
+multi_modality             : False
+load_db                    : None
+load_model                 : None
+dataset                    : programl
+benchmarks                 : ['machsuite',
+                           :  'poly']
+tag                        : wmp-d
+round_num                  : 3
+graph_type                 : 
+graph_transformer_option   : None
+gae_T                      : False
+gae_P                      : False
+SSL                        : False
+load_pretrained_GNN        : False
+class_model_path           : None
+all_kernels                : True
+sample_finetune            : False
+FT_extra                   : False
+only_common_db             : False
+test_extra                 : False
+only_new_points            : False
+new_speedup                : True
+feature_extract            : False
+ignore_kernels             : []
+test_kernels               : ['gemm-p-large',
+                           :  'covariance',
+                           :  'gemm-ncubed',
+                           :  'symm',
+                           :  'fdtd-2d-large',
+                           :  'trmm-opt']
+val_ratio_in_test_kernels  : 0
+val_ratio_in_train_kernels : 0.15
+test_ratio_in_train_kernels : 0.15
+tvt_split_by               : kernels_inductive
+itype_mask_perc            : 0
+gtype                      : programl
+only_pragma_nodes          : False
+encode_full_text           : None
+fulltext_dim               : None
+MAML                       : False
+force_regen                : True
+load_encoders_label        : None
+encoder_path               : None
+model_tag                  : test
+activation                 : elu
+outlier_removal            : None
+no_pragma                  : False
+num_layers                 : 8
+D                          : 768
+target                     : ['perf',
+                           :  'util-LUT',
+                           :  'util-FF',
+                           :  'util-DSP',
+                           :  'util-BRAM']
+gnn_type                   : transformer
+min_allowed_latency        : 100.0
+encode_edge                : False
+encode_edge_position       : False
+ptrans                     : False
+jkn_mode                   : max
+jkn_enable                 : True
+node_attention             : True
+node_attention_MLP         : False
+separate_P_T               : False
+pragma_encoder             : True
+pragma_uniform_encoder     : True
+epsilon                    : 0.001
+normalizer                 : 10000000.0
+util_normalizer            : 1
+max_number                 : 10000000000.0
+norm_method                : speedup-log2
+target_preproc             : None
+target_convert_back        : True
+invalid                    : False
+multi_target               : True
+activation_type            : elu
+margin_loss                : False
+save_model                 : True
+save_every_epoch           : 10000
+encode_log                 : False
+baseline_no_graph          : False
+target_factor              : 1
+target_transform           : None
+loss_scale                 : {'perf': 1.0,
+                           :  'util-DSP': 1.0,
+                           :  'util-BRAM': 1.0,
+                           :  'util-LUT': 1.0,
+                           :  'util-FF': 1.0}
+pairwise_class             : False
+batch_size                 : 4
+data_loader_num_workers    : 0
+device                     : cuda:2
+epoch_num                  : 1000
+debug_iter                 : -1
+ignore_testing             : True
+ignore_validation          : False
+shuffle                    : True
+opt_type                   : AdamW
+lr                         : 1e-05
+max_grad_norm              : None
+weight_decay               : 0.01
+plot_pred_points           : True
+fix_randomness             : True
+random_seed                : 123
+user                       : xxx
+hostname                   : xxxx
+exp_name                   : 
+ts                         : 2023-05-30T22-07-41.081958
+
+Net(
+  (bert_model): RobertaModel(
+    (embeddings): RobertaEmbeddings(
+      (word_embeddings): Embedding(50405, 768)
+      (position_embeddings): Embedding(514, 768, padding_idx=1)
+      (token_type_embeddings): Embedding(1, 768)
+      (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (encoder): RobertaEncoder(
+      (layer): ModuleList(
+        (0): RobertaLayer(
+          (attention): RobertaAttention(
+            (self): RobertaSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): RobertaSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): RobertaIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): RobertaOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (1): RobertaLayer(
+          (attention): RobertaAttention(
+            (self): RobertaSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): RobertaSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): RobertaIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): RobertaOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (2): RobertaLayer(
+          (attention): RobertaAttention(
+            (self): RobertaSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): RobertaSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): RobertaIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): RobertaOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (3): RobertaLayer(
+          (attention): RobertaAttention(
+            (self): RobertaSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): RobertaSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): RobertaIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): RobertaOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (4): RobertaLayer(
+          (attention): RobertaAttention(
+            (self): RobertaSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): RobertaSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): RobertaIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): RobertaOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (5): RobertaLayer(
+          (attention): RobertaAttention(
+            (self): RobertaSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): RobertaSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): RobertaIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): RobertaOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (6): RobertaLayer(
+          (attention): RobertaAttention(
+            (self): RobertaSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): RobertaSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): RobertaIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): RobertaOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (7): RobertaLayer(
+          (attention): RobertaAttention(
+            (self): RobertaSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): RobertaSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): RobertaIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): RobertaOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (8): RobertaLayer(
+          (attention): RobertaAttention(
+            (self): RobertaSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): RobertaSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): RobertaIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): RobertaOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (9): RobertaLayer(
+          (attention): RobertaAttention(
+            (self): RobertaSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): RobertaSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): RobertaIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): RobertaOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (10): RobertaLayer(
+          (attention): RobertaAttention(
+            (self): RobertaSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): RobertaSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): RobertaIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): RobertaOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (11): RobertaLayer(
+          (attention): RobertaAttention(
+            (self): RobertaSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): RobertaSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): RobertaIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): RobertaOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+      )
+    )
+    (pooler): RobertaPooler(
+      (dense): Linear(in_features=768, out_features=768, bias=True)
+      (activation): Tanh()
+    )
+  )
+  (conv_first): MLP(
+    (activation): ELU(alpha=1.0)
+    (layers): ModuleList(
+      (0): Linear(in_features=768, out_features=384, bias=True)
+      (1): Linear(in_features=384, out_features=192, bias=True)
+      (2): Linear(in_features=192, out_features=768, bias=True)
+    )
+  )
+  (conv_layers): ModuleList(
+    (0): TransformerConv(768, 768, heads=1)
+    (1): TransformerConv(768, 768, heads=1)
+    (2): TransformerConv(768, 768, heads=1)
+    (3): TransformerConv(768, 768, heads=1)
+    (4): TransformerConv(768, 768, heads=1)
+    (5): TransformerConv(768, 768, heads=1)
+    (6): TransformerConv(768, 768, heads=1)
+  )
+  (jkn): JumpingKnowledge(max)
+  (gate_nn): Sequential(
+    (0): Linear(in_features=768, out_features=768, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=768, out_features=1, bias=True)
+  )
+  (glob): MyGlobalAttention(gate_nn=Sequential(
+    (0): Linear(in_features=768, out_features=768, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=768, out_features=1, bias=True)
+  ), nn=None)
+  (loss_function): MSELoss()
+  (MLPs): ModuleDict(
+    (perf): MLP(
+      (activation): ELU(alpha=1.0)
+      (layers): ModuleList(
+        (0): Linear(in_features=768, out_features=384, bias=True)
+        (1): Linear(in_features=384, out_features=192, bias=True)
+        (2): Linear(in_features=192, out_features=96, bias=True)
+        (3): Linear(in_features=96, out_features=48, bias=True)
+        (4): Linear(in_features=48, out_features=24, bias=True)
+        (5): Linear(in_features=24, out_features=1, bias=True)
+      )
+    )
+    (util-LUT): MLP(
+      (activation): ELU(alpha=1.0)
+      (layers): ModuleList(
+        (0): Linear(in_features=768, out_features=384, bias=True)
+        (1): Linear(in_features=384, out_features=192, bias=True)
+        (2): Linear(in_features=192, out_features=96, bias=True)
+        (3): Linear(in_features=96, out_features=48, bias=True)
+        (4): Linear(in_features=48, out_features=24, bias=True)
+        (5): Linear(in_features=24, out_features=1, bias=True)
+      )
+    )
+    (util-FF): MLP(
+      (activation): ELU(alpha=1.0)
+      (layers): ModuleList(
+        (0): Linear(in_features=768, out_features=384, bias=True)
+        (1): Linear(in_features=384, out_features=192, bias=True)
+        (2): Linear(in_features=192, out_features=96, bias=True)
+        (3): Linear(in_features=96, out_features=48, bias=True)
+        (4): Linear(in_features=48, out_features=24, bias=True)
+        (5): Linear(in_features=24, out_features=1, bias=True)
+      )
+    )
+    (util-DSP): MLP(
+      (activation): ELU(alpha=1.0)
+      (layers): ModuleList(
+        (0): Linear(in_features=768, out_features=384, bias=True)
+        (1): Linear(in_features=384, out_features=192, bias=True)
+        (2): Linear(in_features=192, out_features=96, bias=True)
+        (3): Linear(in_features=96, out_features=48, bias=True)
+        (4): Linear(in_features=48, out_features=24, bias=True)
+        (5): Linear(in_features=24, out_features=1, bias=True)
+      )
+    )
+    (util-BRAM): MLP(
+      (activation): ELU(alpha=1.0)
+      (layers): ModuleList(
+        (0): Linear(in_features=768, out_features=384, bias=True)
+        (1): Linear(in_features=384, out_features=192, bias=True)
+        (2): Linear(in_features=192, out_features=96, bias=True)
+        (3): Linear(in_features=96, out_features=48, bias=True)
+        (4): Linear(in_features=48, out_features=24, bias=True)
+        (5): Linear(in_features=24, out_features=1, bias=True)
+      )
+    )
+  )
+)
