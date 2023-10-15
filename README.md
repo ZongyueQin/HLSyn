@@ -22,13 +22,13 @@ If you use the dataset in your work, please cite our paper.
 
 ## Data Content and Format
 
-The source code and pragma-augmented programl graph representation of each kernel is stored in the `.c` and `.gexf` file under *sources* and *graphs* folders, respectively. 
+The source code and pragma-augmented programl graph representation of each kernel is stored in the `.c` and `.gexf` file under `sources` and `graphs` folders, respectively. 
 
-Notice that in the source code and graph, the value of praga parameters is are variables. To get specific values for them and the corresponding prediction labels under those values, you need to load the json file under the *design/train* and *design/dev* folder. 
+Notice that in the source code and graph, the value of praga parameters is are variables. To get specific values for them and the corresponding prediction labels under those values, you need to load the json file under the `design/train` and `design/dev` folder. 
 
-In the *design/train* and *design/dev* folder, each json file is a dictionary where the key is the specific parameters of a design and the value is the corresponding prediction labels. 
+In the `design/train` and `design/dev` folder, each json file is a dictionary where the key is the specific parameters of a design and the value is the corresponding prediction labels. 
 
-See *utils/load.py" for examples of how to load data.
+See `utils/load.py` for examples of how to load data.
 
 ## Leaderboard
 
