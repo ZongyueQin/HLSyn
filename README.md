@@ -16,9 +16,14 @@ If you use the dataset in your work, please cite our paper.
 }
 ```
 
-## Download Link
+## Download Data
 
 [Temporary Link](https://zenodo.org/records/8034115) 
+
+- TODO: how to split train, dev, test, test kernels
+- TODO: convert pickle files into json, which attributes to preserve?
+- TODO: merge poly and machsuite
+- TODO: new download link
 
 ## Data Content and Format
 
@@ -28,17 +33,22 @@ Notice that in the source code and graph, the value of praga parameters is are v
 
 In the `design/train` and `design/dev` folder, each json file is a dictionary where the key is the specific parameters of a design and the value is the corresponding prediction labels. 
 
-See `utils/load.py` for examples of how to load data.
+See `examples/load.py` for examples of how to load data.
+
+- TODO: examples/load.py, load source code, graph, parameter values, and prediction labels, (optional) insert parameter values into source code and graphs
 
 ## Leaderboard
 
 Coming soon
 
+- TODO: how to do inductive testing?
+- example prediction file
+
 ## Running Baselines
 
 Check instructions [here](https://github.com/ZongyueQin/HLSyn/tree/main/baselines) 
 
-TODO: Current baselines run with the entire test set, need to address data leak problem 
+- TODO: Current baselines run with the entire test set, need to address data leak problem 
 
 ## Acknowledgement
 
