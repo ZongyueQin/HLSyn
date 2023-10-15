@@ -30,7 +30,9 @@ Coming soon
 
 ## Running Baselines
 
-TODO
+Check instructions [here](https://github.com/ZongyueQin/HLSyn/tree/main/baselines) 
+
+TODO: Current baselines run with the entire test set, need to address data leak problem 
 
 ## Acknowledgement
 
