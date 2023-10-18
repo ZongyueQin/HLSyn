@@ -21,7 +21,7 @@ In short, when loading a trained model's checkpoint, please double-check the `co
 
 ## Data Files
 
-Download from https://zenodo.org/record/8034115 and extract under the project root directory with the folder name being "dse_database<version>". Please change the "dse_database_name" parameter in `config.py` to reflect the actual dse folder name, e.g. `dse_database_06122023`. The reason is that, we may release newer version of our dataset in future, and in that case, a different folder such as `dse_database_06122023_new` can be added and the only change to code is the "dse_database_name" parameter in `config.py`. In other words, we maintain different `dse_database`s under the project directories each corresponding to one version of our dataset. 
+Download from https://zenodo.org/record/8034115 (The data is in different format of the other link, but has same contents) and extract under the project root directory with the folder name being "dse_database<version>". Please change the "dse_database_name" parameter in `config.py` to reflect the actual dse folder name, e.g. `dse_database_06122023`. The reason is that, we may release newer version of our dataset in future, and in that case, a different folder such as `dse_database_06122023_new` can be added and the only change to code is the "dse_database_name" parameter in `config.py`. In other words, we maintain different `dse_database`s under the project directories each corresponding to one version of our dataset. 
 
 
 

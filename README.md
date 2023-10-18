@@ -20,9 +20,7 @@ If you use the dataset in your work, please cite our paper.
 
 [Temporary Link](https://zenodo.org/records/8034115) 
 
-- TODO: how to split train, dev, test, test kernels
 - TODO: convert pickle files into json, which attributes to preserve?
-- TODO: merge poly and machsuite
 - TODO: new download link
 
 ## Data Content and Format
@@ -41,15 +39,15 @@ See `examples/load.py` for examples of how to load data.
 
 Coming soon
 
-- TODO: how to do inductive testing?
-- example prediction file
 
 ## Running Baselines
 
 Check instructions [here](https://github.com/ZongyueQin/HLSyn/tree/main/baselines) 
 
-- TODO: Current baselines run with the entire test set, need to address data leak problem 
+## License
+
+[CC BY-SA 4.0 license](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
 
 ## Acknowledgement
 
-TODO
+This work was partially supported by NSF 2211557, NSF 1937599, NSF 2119643, NSF 2303037, NASA, SRC JUMP 2.0 Center, Okawa Foundation, Amazon Research, Cisco, Picsart, Snapchat, and CDSC industrial partners ( https://cdsc.ucla.edu/partners/). We would also like to thank Marci Baun for editing the paper.
