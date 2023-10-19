@@ -37,7 +37,7 @@ The value of each design data point contains the following fields:
 - `points`: the dictionary stores the specific values for each pragma parameter.
 - `valid`: if the design is a valid design. Notice that if for a design point `valid=False` but `perf != 0`, it can still be used for regression task.
 - `perf`: value of the performance target
-- `res\_util`: a dictionary of values for the resource utilization targets
+- `res_util`: a dictionary of values for the resource utilization targets
 
 An example of the design data point is shown below
 
