@@ -18,7 +18,7 @@ If you use the dataset in your work, please cite our paper.
 
 ## Data
 
-`data/HLSyn\_data.tar.gz` is the data stored in .json, .gexf, and .c format.
+`data/HLSyn_data.tar.gz` is the data stored in .json, .gexf, and .c format.
 
 In addition, the format used by our baseline code can be downloaded from [here](https://zenodo.org/records/8034115) 
 
