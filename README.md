@@ -1,4 +1,4 @@
-# Towards a Comprehensive Benchmark for FPGA Targeted High-Level Synthesis
+# Towards a Comprehensive Benchmark for High-Level Synthesis Targeted to FPGAs
 
 ## Description
 
