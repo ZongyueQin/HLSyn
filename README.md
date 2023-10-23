@@ -9,7 +9,7 @@ High-level synthesis (HLS) aims to raise the abstraction layer in hardware desig
 If you use the dataset in your work, please cite our paper.
 ```
 @article{chang2023dr,
-  title={Towards a Comprehensive Benchmark for FPGA Targeted High-Level Synthesis},
+  title={Towards a Comprehensive Benchmark for High-Level Synthesis Targeted to FPGAs},
   author={Yunsheng Bai, Atefeh Sohrabizadeh, Zongyue Qin, Ziniu Hu, Yizhou Sun, and Jason Cong},
   journal={NeurIPS},
   year={2023}
