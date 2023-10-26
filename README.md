@@ -79,4 +79,4 @@ Check instructions [here](https://github.com/ZongyueQin/HLSyn/tree/main/baseline
 
 ## Acknowledgement
 
-This work was partially supported by NSF 2211557, NSF 1937599, NSF 2119643, NSF 2303037, NASA, SRC JUMP 2.0 Center, Okawa Foundation, Amazon Research, Cisco, Picsart, Snapchat, and CDSC industrial partners ( https://cdsc.ucla.edu/partners/). We would also like to thank Marci Baun for editing the paper.
+This work was partially supported by NSF 2211557, NSF 1937599, NSF 2119643, NSF 2303037, NASA, SRC JUMP 2.0 Center, Okawa Foundation, Amazon Research, Cisco, Picsart, Snapchat, and CDSC industrial partners ( https://cdsc.ucla.edu/partners/). We would also like to thank AMD/Xilinx for HACC equipment donation and Marci Baun for editing the paper.
